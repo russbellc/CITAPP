@@ -32,5 +32,9 @@ namespace CITAPPdb.Account
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
         }
+
+        protected void UploadPicture_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
