@@ -7,7 +7,7 @@
         <p class="lead">A fast and convenient way to book any medical appointment while keeping 
             track of your medical records, prescriptions, etc
         </p>
-        <p><a href="/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p><a href="/About" class="btn btn-warning btn-lg">Learn more &raquo;</a></p>
     </div>
 
     <div class="row">
