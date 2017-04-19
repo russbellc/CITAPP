@@ -11,7 +11,7 @@
         <div class ="row">
             <div class="col-md-12">
                 <asp:Calendar Caption="Select a date for your appointment" ID="CalendarAppt" Font-Names="Arial" 
-                    runat="server" SelectedDate='<%# Bind("ApptDate") %>'>
+                    runat="server" SelectedDate='<%# Bind("ApptDate") %>' OnSelectionChanged="CalendarAppt_SelectionChanged">
                     <SelectedDayStyle BackColor="LightGray" Font-Bold="True"></SelectedDayStyle>
                 </asp:Calendar>
             </div>
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="ApptDate" CssClass="col-md-2 control-label">Selected Date</asp:Label>
                         <div class="col-md-8">
-                            <asp:TextBox runat="server" ID="ApptDate" CssClass="form-control"/>
+                            <asp:TextBox runat="server" ID="ApptDate" CssClass="form-control" OnTextChanged="ApptDate_TextChanged"/>
                         </div>
                     </div>
                     <div class ="form-group">
