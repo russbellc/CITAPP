@@ -13,7 +13,8 @@ namespace CITAPPdb.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ListBox1.Visible = false;
+            ListBox2.Visible = false;
         }
 
         protected void ApptDate_TextChanged(object sender, EventArgs e)
@@ -93,6 +94,18 @@ namespace CITAPPdb.Account
         protected void ListBoxPatients_SelectedIndexChanged(object sender, EventArgs e)
         {
             TextBox1.Text = ListBoxPatients.SelectedValue.ToString();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ListBox1.Visible = true;
+            ListBox2.Visible = false;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            ListBox1.Visible = false;
+            ListBox2.Visible = true;
         }
     }
 }
