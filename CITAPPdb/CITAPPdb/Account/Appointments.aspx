@@ -20,22 +20,33 @@
                 <div class="form-horizontal">
                     <h4>Create a new appointment</h4>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="ApptDate" CssClass="col-md-2 control-label">Selected Date</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="ApptDate" CssClass="col-md-8 control-label">Selected Date</asp:Label>
+                        <asp:Label ID="Label1" runat="server" CssClass="col-md-8 control-label" Text="Selected Patient"></asp:Label>
                         <div class="col-md-8">
                             <asp:TextBox runat="server" ID="ApptDate" CssClass="form-control" OnTextChanged="ApptDate_TextChanged"/>
+                            <asp:TextBox ID="TextBox1" runat="server" style="margin-bottom: 0px" Width="276px"></asp:TextBox>
+                            <asp:FormView ID="FormView1" runat="server" DataSourceID="CITAPP">
+                            </asp:FormView>
                         </div>
                     </div>
                     <div class ="form-group">
                         <asp:Label runat="server" AssociatedControlID="ListBoxPatients" CssClass="col-md-2 control-label">Patient</asp:Label>
                         <div class="col-md-8">
-                            <asp:ListBox ID="ListBoxPatients" runat="server" DataSourceID="CITAPP" DataTextField="Patients" DataValueField="Patients" Width="285px">
+                            <asp:ListBox ID="ListBoxPatients" runat="server" DataSourceID="CITAPP" DataTextField="Patients" DataValueField="Patients" Width="285px" OnSelectedIndexChanged="ListBoxPatients_SelectedIndexChanged">
                             </asp:ListBox>    
-                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT [first_name] + ' ' +  [last_name] AS 'Patients' FROM [Clientes] ORDER BY [last_name]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT [first_name] + ' ' + [last_name] AS 'Patients' FROM [Clientes] ORDER BY [last_name]"></asp:SqlDataSource>
+                            
+                            <asp:Button ID="BookButton" runat="server" OnClick="BookButton_Click" Text="Book Appointment" Width="286px" />
+
+                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <asp:TextBox ID="idBox" runat="server"></asp:TextBox>
 
     </form>
 </body>

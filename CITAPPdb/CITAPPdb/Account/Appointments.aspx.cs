@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -21,7 +23,19 @@ namespace CITAPPdb.Account
 
         protected void CalendarAppt_SelectionChanged(object sender, EventArgs e)
         {
-            ApptDate.Text = CalendarAppt.SelectedDate.ToString();
+            ApptDate.Text = this.CalendarAppt.SelectedDate.ToShortDateString();
+
+        }
+
+        protected void BookButton_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        protected void ListBoxPatients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextBox1.Text = ListBoxPatients.SelectedValue.ToString();
         }
     }
 }
