@@ -8,6 +8,28 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" runat="server" href="~/">CITAPP</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="~/">Home</a></li>
+                                <li><a runat="server" href="~/About">About</a></li>
+                                <li><a runat="server" href="~/Contact">Contact</a></li>
+                                <li><a runat="server" href="~/Account/ClientList">Clients</a></li>
+                                <li><a runat="server" href="~/Account/Appointments">Appointments</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
         <div class ="row">
             <div class="col-md-12">
                 <asp:Calendar Caption="Select a date for your appointment" ID="CalendarAppt" Font-Names="Arial" 
@@ -38,8 +60,6 @@
                             
                             <asp:Button ID="BookButton" runat="server" OnClick="BookButton_Click" Text="Book Appointment" Width="286px" />
 
-                            
-
                         </div>
                     </div>
                 </div>
@@ -49,5 +69,10 @@
         <asp:TextBox ID="idBox" runat="server"></asp:TextBox>
 
     </form>
+    <div class="container body-content">
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - CITAPP</p>
+                </footer>
+    </div>
 </body>
 </html>

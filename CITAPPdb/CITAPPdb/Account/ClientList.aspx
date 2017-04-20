@@ -78,6 +78,7 @@
   padding-left: 15px;
 }
 
+
 label {
   display: inline-block;
   margin-bottom: 5px;
@@ -102,22 +103,81 @@ label {
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    
+
+
+    </div>
+    <div class="column">
+
+
+        <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="respond" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+
+
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" runat="server" href="~/">CITAPP</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="~/">Home</a></li>
+                                <li><a runat="server" href="~/About">About</a></li>
+                                <li><a runat="server" href="~/Contact">Contact</a></li>
+                                <li><a runat="server" href="~/Account/ClientList">Clients</a></li>
+                                <li><a runat="server" href="~/Account/Appointments">Appointments</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+
+            <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Patients" DataValueField="Patients" Height="221px" Width="1260px"></asp:ListBox>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT TOP 5000 first_name  + ' ' + last_name + '. Doctor: ' + doctor AS 'Patients' FROM Clientes"></asp:SqlDataSource>
+            <p>
+                            <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label" ID="Label1">Name</asp:Label>
+                                <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" Width="295px"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button runat="server" OnClick="CreateUser_Click" Text="List My Clients" CssClass="btn btn-success" ID="Button1" />
+                            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="List All Client" />
+                        </p>
+            <asp:ListBox ID="ListBox2" runat="server" Height="221px" Width="1260px"></asp:ListBox>
+        </form>
+
+        <div class="container body-content">
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - CITAPP</p>
+                </footer>
+         </div>
     
         
 
+
     </div>
-        <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Patients" DataValueField="Patients" Height="221px" Width="1260px"></asp:ListBox>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString2 %>" SelectCommand="SELECT TOP 5000 first_name  + ' ' + last_name + '. Doctor: ' + doctor AS 'Patients' FROM Clientes"></asp:SqlDataSource>
-        <p>
-                        <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label" ID="Label1">Name</asp:Label>
-                            <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" Width="295px"/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button runat="server" OnClick="CreateUser_Click" Text="List My Clients" CssClass="btn btn-success" ID="Button1" />
-                        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="List All Client" />
-                    </p>
-        <asp:ListBox ID="ListBox2" runat="server" Height="221px" Width="1260px"></asp:ListBox>
-    </form>
+    
 </body>
 </html>
