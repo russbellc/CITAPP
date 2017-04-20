@@ -31,20 +31,16 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.Calendar CalendarAppt;
         
         /// <summary>
-<<<<<<< HEAD
-        /// Label1 control.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ApptDate control.
-=======
         /// Control ApptDate.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -53,29 +49,25 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.TextBox ApptDate;
         
         /// <summary>
-<<<<<<< HEAD
-        /// TextBox1 control.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// FormView1 control.
+        /// Control FormView1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView FormView1;
         
         /// <summary>
-        /// ListBoxPatients control.
-=======
         /// Control ListBoxPatients.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -93,21 +85,66 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.SqlDataSource CITAPP;
         
         /// <summary>
-        /// BookButton control.
+        /// Control BookButton.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BookButton;
         
         /// <summary>
-        /// idBox control.
+        /// Control idBox.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox idBox;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Control ListBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        
+        /// <summary>
+        /// Control ListBox2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        
+        /// <summary>
+        /// Control SqlDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

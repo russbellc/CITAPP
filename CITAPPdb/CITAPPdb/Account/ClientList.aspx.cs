@@ -4,6 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.SqlServer.Server;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.IO;
+using System.Security.Principal;
+using System.Threading;
 namespace CITAPPdb.Account
 {
     public partial class ClientList : System.Web.UI.Page
@@ -47,6 +53,10 @@ namespace CITAPPdb.Account
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            using (SqlConnection con = new SqlConnection("Data Source=DELATORRE;Initial Catalog=CITAPP;Integrated Security=True"))
+            {
+
+            }
             ListBox2.Visible = false;
             ListBox1.Visible = true;
         }
