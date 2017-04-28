@@ -30,6 +30,8 @@ namespace CITAPPdb.Account
 
         protected void BookButton_Click(object sender, EventArgs e)
         {
+            //TextBox2.Text = "";
+            
             string username = (WindowsIdentity.GetCurrent().Name).ToString();
             string server = "";
             int index = username.LastIndexOf("\\");
@@ -45,14 +47,14 @@ namespace CITAPPdb.Account
             "SET @ApptId = (SELECT COUNT(id) FROM Citas )+ 1; " +
             "SET @PatientId = (SELECT id FROM Clientes WHERE first_name + ' ' +  last_name = '" + TextBox1.Text + "'); " +
             "SET @SelDate = '" + ApptDate.Text.ToString() + "'; " +
-            "INSERT INTO Citas VALUES (@ApptId,'', @PatientId, @SelDate)"; ;
+            "INSERT INTO Citas VALUES (@ApptId,'', @PatientId, @SelDate)"; 
 
 
             if (ApptDate != null && !string.IsNullOrWhiteSpace(ApptDate.Text))
             {
                 try
                 {
-
+                    /*
                     using (SqlConnection cnn = new SqlConnection(ConString))
                     {
                         using (SqlCommand cmd = new SqlCommand(SQLCommand, cnn))
@@ -106,6 +108,11 @@ namespace CITAPPdb.Account
         {
             ListBox1.Visible = false;
             ListBox2.Visible = true;
+        }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,7 +48,8 @@
                         <div class="col-md-8">
                             <asp:TextBox runat="server" ID="ApptDate" CssClass="form-control" OnTextChanged="ApptDate_TextChanged"/>
                             <asp:TextBox ID="TextBox1" runat="server" style="margin-bottom: 0px" Width="276px"></asp:TextBox>
-                            <asp:FormView ID="FormView1" runat="server" DataSourceID="CITAPP">
+                            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" Width="31px"></asp:TextBox>
+                            <asp:FormView ID="FormView1" runat="server" DataSourceID="CITAPP" Visible="False">
                                 <EditItemTemplate>
                                     Patients:
                                     <asp:TextBox ID="PatientsTextBox" runat="server" Text='<%# Bind("Patients") %>' />
@@ -77,11 +78,19 @@
                         <div class="col-md-8">
                             <asp:ListBox ID="ListBoxPatients" runat="server" DataSourceID="CITAPP" DataTextField="Patients" DataValueField="Patients" Width="285px" OnSelectedIndexChanged="ListBoxPatients_SelectedIndexChanged">
                             </asp:ListBox>    
-                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString2 %>" SelectCommand="SELECT TOP 1000 [first_name] + ' ' + [last_name] AS 'Patients' FROM [Clientes] ORDER BY [last_name]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT TOP 1000 [first_name] + ' ' + [last_name] AS 'Patients' FROM [Clientes] ORDER BY [last_name]"></asp:SqlDataSource>
                             
                             <asp:Button ID="BookButton" runat="server" OnClick="BookButton_Click" Text="Book Appointment" Width="286px" />
-
-                        </div>
+                            <asp:SqlDataSource ID="InsertDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>"
+                                SelectCommand = "(SELECT COUNT(id) FROM Citas )+ 1"
+                                InsertCommand = "INSERT INTO Citas VALUES (@ApptId,'', @PatientId, @SelDate) ">
+                                <insertparameters>
+                                    <asp:formparameter name="ApptId" formfield="AppoiintmentId" />
+                                    <asp:formparameter name="PatientId"  formfield="PatientId" />
+                                    <asp:formparameter name="SelDate"  formfield="SelectedBookingDate" />
+                                </insertparameters>
+                                </asp:SqlDataSource>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -96,10 +105,10 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View Previous Appointments" />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="View Current Appointments" />
         <br />
-        <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="Column1" Height="110px" Width="144px"></asp:ListBox>
+        <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="Column1" Height="110px" Width="485px"></asp:ListBox>
         <br />
-        <asp:ListBox ID="ListBox2" runat="server" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="Column1" Height="110px" Width="144px"></asp:ListBox>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString2 %>" SelectCommand="SELECT 'Doctor: ' + doctor + ' Paciente: ' + paciente + ' Fecha: ' + convert(varchar(25), fecha, 120) FROM Citas AS cita WHERE fecha &gt; GETDATE() ORDER BY fecha ASC"></asp:SqlDataSource>
+        <asp:ListBox ID="ListBox2" runat="server" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="Column1" Height="110px" Width="484px"></asp:ListBox>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT 'Doctor: ' + doctor + ' Paciente: ' + paciente + ' Fecha: ' + convert(varchar(25), fecha, 120) FROM Citas AS cita WHERE fecha &gt; GETDATE() ORDER BY fecha ASC"></asp:SqlDataSource>
 
     </form>
     <div class="container body-content">

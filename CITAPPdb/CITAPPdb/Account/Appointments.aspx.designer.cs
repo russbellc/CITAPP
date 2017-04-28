@@ -31,24 +31,16 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.Calendar CalendarAppt;
         
         /// <summary>
-<<<<<<< HEAD
         /// Label1 control.
-=======
-        /// Control Label1.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-<<<<<<< HEAD
         /// ApptDate control.
-=======
-        /// Control ApptDate.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -57,33 +49,34 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.TextBox ApptDate;
         
         /// <summary>
-<<<<<<< HEAD
         /// TextBox1 control.
-=======
-        /// Control TextBox1.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Control FormView1.
+        /// TextBox2 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        
+        /// <summary>
+        /// FormView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView FormView1;
         
         /// <summary>
-<<<<<<< HEAD
         /// ListBoxPatients control.
-=======
-        /// Control ListBoxPatients.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -101,65 +94,74 @@ namespace CITAPPdb.Account {
         protected global::System.Web.UI.WebControls.SqlDataSource CITAPP;
         
         /// <summary>
-        /// Control BookButton.
+        /// BookButton control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BookButton;
         
         /// <summary>
-        /// Control idBox.
+        /// InsertDataSource control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource InsertDataSource;
+        
+        /// <summary>
+        /// idBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox idBox;
         
         /// <summary>
-        /// Control Button1.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control Button2.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control ListBox1.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// Control ListBox2.
+        /// ListBox2 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBox2;
         
         /// <summary>
-        /// Control SqlDataSource1.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
