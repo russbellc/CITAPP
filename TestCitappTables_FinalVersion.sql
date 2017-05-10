@@ -5,28 +5,28 @@ Pass VARCHAR(30),
 Nombre VARCHAR(200),
 Apellido VARCHAR(200),
 Telefono BIGINT
-CONSTRAINT tabla_pk PRIMARY KEY (Id),
-CONSTRAINT tabla_uq UNIQUE (Id)
+CONSTRAINT tablaPK PRIMARY KEY (Id),
+CONSTRAINT tablaUQ UNIQUE (Id)
 )
 
 create TABLE Doctor(
-UsusarioId INTEGER PRIMARY KEY,
+UsuarioId INTEGER PRIMARY KEY,
 Especialidad VARCHAR(200)
-CONSTRAINT tabla_fk FOREIGN KEY (UsusarioId)
-REFERENCES Usuario(Id)
+CONSTRAINT tablaFK FOREIGN KEY (UsuarioId)
+REFERENCES Usuario(Id),
 )
 
 CREATE TABLE Paciente(
-UsusarioId INTEGER,
+UsuarioId INTEGER,
 TipoSangre VARCHAR(10),
 Estatura INT,
 Peso INT,
 Alergias VARCHAR(250),
-StatusPaciente VARCHAR(20),
+STATUS VARCHAR(20),
 FechaNac DATETIME,
-PRIMARY KEY (UsusarioId),
-CONSTRAINT tabla_foreignkey FOREIGN KEY (UsusarioId)
-REFERENCES Usuario(Id)
+PRIMARY KEY (UsuarioId),
+CONSTRAINT TablaForeignKey FOREIGN KEY (UsuarioId)
+REFERENCES Usuario(Id),
 )
 
 CREATE TABLE CitasDisponibles(
@@ -37,7 +37,7 @@ Fecha DATETIME,
 Hora DATETIME
 PRIMARY KEY(IdCitaDisp),
 FOREIGN KEY (DoctorUsuarioId)
-REFERENCES Doctor(UsusarioId)
+REFERENCES Doctor(UsuarioId)
 )
 
 CREATE TABLE Cita(
@@ -49,7 +49,7 @@ StatusCita VARCHAR(255),
 VisitaAnterior INTEGER,
 PRIMARY KEY(IdCita),
 FOREIGN KEY (CitasDispobiblesIdCitaDisp)
-REFERENCES CitasDispobibles(IdCitaDisp),
+REFERENCES CitasDisponibles(IdCitaDisp),
 FOREIGN KEY (PacienteUsuarioId)
 REFERENCES Paciente(UsuarioId)
 )
@@ -73,7 +73,7 @@ PRIMARY KEY (PacienteUsuarioId),
 FOREIGN KEY (PacienteUsuarioId)
 REFERENCES Paciente(UsuarioId),
 FOREIGN KEY (VisitaCitaIdCita)
-REFERENCES Visita(CitaIdCita)
+REFERENCES Visita(CitaIdCita),
 )
 
 CREATE TABLE Recetas(
@@ -86,4 +86,5 @@ DiasDuracion INT,
 PRIMARY KEY (VisitaCitaIdCita),
 FOREIGN KEY (VisitaCitaIdCita)
 REFERENCES Visita(CitaIdCita)
+
 )
