@@ -18,11 +18,11 @@ REFERENCES Usuario(Id),
 
 CREATE TABLE Paciente(
 UsuarioId INTEGER,
-TipoSangre VARCHAR(10),
-Estatura INT,
-Peso INT,
+TipoSangre VARCHAR(20),
+Estatura DECIMAL(18,4),
+Peso DECIMAL(18,4),
 Alergias VARCHAR(250),
-STATUS VARCHAR(20),
+StatusPaciente VARCHAR(20),
 FechaNac DATETIME,
 PRIMARY KEY (UsuarioId),
 CONSTRAINT TablaForeignKey FOREIGN KEY (UsuarioId)
