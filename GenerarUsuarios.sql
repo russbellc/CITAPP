@@ -13,7 +13,39 @@ UNIQUE (Id)--
 CREATE TABLE Especialidad(
 Especialidad VARCHAR(200)
 )
+--Tabla blood type--
+CREATE TABLE TipoSangre(
+TipoSangre VARCHAR(10)
+)
+INSERT INTO TipoSangre VALUES('A+')
+INSERT INTO TipoSangre VALUES('A-')
+INSERT INTO TipoSangre VALUES('B+')
+INSERT INTO TipoSangre VALUES('B-')
+INSERT INTO TipoSangre VALUES('AB+')
+INSERT INTO TipoSangre VALUES('AB-')
+INSERT INTO TipoSangre VALUES('O+')
+INSERT INTO TipoSangre VALUES('O-')
 
+--Tabla Alergias--
+CREATE TABLE Alergias(
+Alergias VARCHAR(250)
+)
+INSERT INTO Alergias VALUES('Anticonvulsivos')
+INSERT INTO Alergias VALUES('Insulina')
+INSERT INTO Alergias VALUES('Penicilina')
+INSERT INTO Alergias VALUES('Sulfamidas')
+--Tabla Status--
+CREATE TABLE STATUS(
+STATUS VARCHAR(20)
+)
+INSERT INTO STATUS VALUES('Alive')
+INSERT INTO STATUS VALUES('Deceased')
+--Tabla StatusCITA--
+CREATE TABLE STATUSC(
+STATUSC VARCHAR(20)
+)
+INSERT INTO STATUSC VALUES('Disponible')
+INSERT INTO STATUSC VALUES('No Disponible')
 --Llenar  Tabla Especialidad--
 INSERT INTO Especialidad VALUES('Cardiologo')
 INSERT INTO Especialidad VALUES('Neurologo')
@@ -67,3 +99,51 @@ END
 
 EXEC generardoctores @numdoctores = 40
 
+CREATE PROCEDURE generarpacientes
+(
+@numpacientes int
+)
+AS
+declare @numactual int, @id int, @bloodtype varchar(10), @estatura int, @peso int, @allergy varchar(250),@fechanacimiento DATE,
+@STATUS varchar(20)
+set @numactual = (SELECT COUNT(*) FROM Paciente)
+WHILE @numactual <= @numpacientes
+BEGIN
+	SET @id = (SELECT TOP 1 id from UsuarioAlt ORDER BY NEWID())
+	SET @bloodtype = (SELECT TOP 1 TipoSangre from TipoSangre ORDER BY NEWID())
+	SET @allergy = (SELECT TOP 1 Alergias from Alergias ORDER BY NEWID())
+	SET @STATUS = (SELECT TOP 1 STATUS from STATUS ORDER BY NEWID())
+	SET @estatura = (ROUND(((195 - 155 -1) * RAND() + 155), 0))
+	SET @peso = (ROUND(((95 - 65 -1) * RAND() + 65), 0))
+	SET @fechanacimiento =DATEADD(DAY, ABS(CHECKSUM(NEWID()) % 29200), '1935-01-01')
+	INSERT INTO Paciente VALUES(@id, @bloodtype,@estatura,@peso,@allergy,@STATUS,@fechanacimiento)
+	DELETE FROM UsuarioAlt WHERE @id = id
+	SET @numactual = @numactual + 1
+END
+
+EXEC generarpacientes @numpacientes = 10
+
+-- Generar Citas Disponibles--
+
+CREATE PROCEDURE crearcitasd
+(
+    @numbusc int
+)
+AS
+declare  @numactual int, @doctorid varchar(50), @statuscita varchar(50), @fechacita DATE, @usuario varchar(50), 
+@pass varchar(50), @telephone BIGINT
+set @numactual = (SELECT COUNT(*) FROM CitasDisponibles)
+DECLARE @date_from AS DATETIME = GETDATE()
+DECLARE @date_to AS DATETIME = '2017-12-31'i
+DECLARE @days_diff AS INT = cast(@date_to - @date_from AS INT)
+WHILE @numactual <= @numbusc
+BEGIN
+	set @doctorid = (SELECT TOP 1 UsuarioId from Doctor ORDER BY NEWID())
+	set @statuscita = (SELECT TOP 1 STATUSC from STATUSC ORDER BY NEWID())
+	set @fechacita =(SELECT @date_from +
+	DATEADD(hour, ABS(CHECKSUM(newid()) % 24), 0) + DATEADD(day, ABS(CHECKSUM(newid()) % @days_diff), 0))
+	INSERT INTO CitasDisponibles VALUES(@numactual + 1, @doctorid, @statuscita, @fechacita, @fechacita)
+	SET @numactual = @numactual + 1
+END;
+
+EXEC crearcitasd @numbusc = 20
