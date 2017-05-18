@@ -31,5 +31,5 @@ WHILE @Patients > 0
 	END
 END
 
-EXEC spGeneratePatients 1000
+EXEC spGeneratePatients 3000
 

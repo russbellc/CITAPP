@@ -17,4 +17,4 @@ WHILE @Doctors > 0
 	END
 END
 
-EXEC spGenerateDoctors 900
+EXEC spGenerateDoctors 3000

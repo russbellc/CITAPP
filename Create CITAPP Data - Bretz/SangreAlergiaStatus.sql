@@ -106,4 +106,82 @@ INSERT INTO TiposStatus VALUES (17, 'Activo');
 INSERT INTO TiposStatus VALUES (18, 'Activo');
 INSERT INTO TiposStatus VALUES (19, 'Activo');
 INSERT INTO TiposStatus VALUES (20, 'Activo');
+-------------------------------------------------------------------
+
+CREATE TABLE StatusCitas
+(
+	Id INT,
+	StatusCita VARCHAR(50)
+)
+INSERT INTO StatusCitas VALUES (1, 'Disponible');
+INSERT INTO StatusCitas VALUES (2, 'Ocupada');
+INSERT INTO StatusCitas VALUES (3, 'Expirada');
+INSERT INTO StatusCitas VALUES (4, 'Cancelada');
+
+------------------------------------------------------------------------------
+CREATE TABLE Medicamentos
+(
+	Id INT,
+	Medicamento VARCHAR(50)
+)
+INSERT INTO Medicamentos VALUES (1, 'Paracetamol');
+INSERT INTO Medicamentos VALUES (2, 'Naloxona');
+INSERT INTO Medicamentos VALUES (3, 'Acetilcisteína');
+INSERT INTO Medicamentos VALUES (4, 'Pralidoxima');
+INSERT INTO Medicamentos VALUES (5, 'Calcioedetato sódico ');
+INSERT INTO Medicamentos VALUES (6, 'Penicilamina');
+INSERT INTO Medicamentos VALUES (7, 'Dimercaprol');
+INSERT INTO Medicamentos VALUES (8, 'Flumazenil');
+INSERT INTO Medicamentos VALUES (9, 'Fentanilo Citrato ');
+INSERT INTO Medicamentos VALUES (10, 'Droperidol');
+INSERT INTO Medicamentos VALUES (11, 'Pancuronio');
+INSERT INTO Medicamentos VALUES (12, 'Suxametonio');
+INSERT INTO Medicamentos VALUES (13, 'Bupivacaina');
+INSERT INTO Medicamentos VALUES (14, 'Lidocaína');
+INSERT INTO Medicamentos VALUES (15, 'Oxígeno');
+INSERT INTO Medicamentos VALUES (16, 'Sevoflurano');
+INSERT INTO Medicamentos VALUES (17, 'Isoflurano');
+INSERT INTO Medicamentos VALUES (18, 'Propofol');
+INSERT INTO Medicamentos VALUES (19, 'Ketamina');
+INSERT INTO Medicamentos VALUES (20, 'Tiopental'); 
+INSERT INTO Medicamentos VALUES (21, 'Midazolam'); 
+INSERT INTO Medicamentos VALUES (22, 'Atropina'); 
+INSERT INTO Medicamentos VALUES (23, 'Escopolamina'); 
+INSERT INTO Medicamentos VALUES (24, 'Vacuna conjugada DPT'); 
+INSERT INTO Medicamentos VALUES (25, 'Vacuna DT'); 
+INSERT INTO Medicamentos VALUES (26, 'Ciproterona'); 
+INSERT INTO Medicamentos VALUES (27, 'Vasopresina'); 
+INSERT INTO Medicamentos VALUES (28, 'Insulina'); 
+INSERT INTO Medicamentos VALUES (29, 'Anestecia'); 
+INSERT INTO Medicamentos VALUES (30, 'Sulfamidas'); 
+INSERT INTO Medicamentos VALUES (31, 'Desmopresina'); 
+INSERT INTO Medicamentos VALUES (32, 'Bromocriptina'); 
+INSERT INTO Medicamentos VALUES (33, 'Mesilato'); 
+INSERT INTO Medicamentos VALUES (34, 'Propranolol'); 
+INSERT INTO Medicamentos VALUES (35, 'Metimazol'); 
+INSERT INTO Medicamentos VALUES (36, 'Levotiroxina'); 
+INSERT INTO Medicamentos VALUES (37, 'Metformina'); 
+INSERT INTO Medicamentos VALUES (38, 'Insulina'); 
+INSERT INTO Medicamentos VALUES (39, 'Betametasona'); 
+INSERT INTO Medicamentos VALUES (40, 'Dexametasona'); 
+INSERT INTO Medicamentos VALUES (41, 'Metilprednisolona'); 
+INSERT INTO Medicamentos VALUES (42, 'Prednisona'); 
+INSERT INTO Medicamentos VALUES (43, 'Hidrocortisona'); 
+INSERT INTO Medicamentos VALUES (44, 'Diclofenac'); 
+INSERT INTO Medicamentos VALUES (45, 'Ibuprofeno'); 
+INSERT INTO Medicamentos VALUES (46, 'Indometacina'); 
+INSERT INTO Medicamentos VALUES (47, 'Dipirona'); 
+INSERT INTO Medicamentos VALUES (48, 'Morfina'); 
+INSERT INTO Medicamentos VALUES (49, 'Vitamina C '); 
+INSERT INTO Medicamentos VALUES (50, 'Retinol'); 
+INSERT INTO Medicamentos VALUES (51, 'Nicotinamida'); 
+INSERT INTO Medicamentos VALUES (52, 'Piridoxina'); 
+INSERT INTO Medicamentos VALUES (53, 'Messna'); 
+INSERT INTO Medicamentos VALUES (54, 'Leucovorin'); 
+INSERT INTO Medicamentos VALUES (55, 'Levamisol'); 
+INSERT INTO Medicamentos VALUES (56, 'Molgramostim'); 
+INSERT INTO Medicamentos VALUES (57, 'Tamoxifeno'); 
+INSERT INTO Medicamentos VALUES (58, 'Carboplatino'); 
+INSERT INTO Medicamentos VALUES (59, 'Vimblastina'); 
+INSERT INTO Medicamentos VALUES (60, 'Clorambucil'); 
 
