@@ -18,11 +18,11 @@ REFERENCES Usuario(Id),
 
 CREATE TABLE Paciente(
 UsuarioId INTEGER,
-TipoSangre VARCHAR(10),
-Estatura INT,
-Peso INT,
+TipoSangre VARCHAR(20),
+Estatura DECIMAL(18,4),
+Peso DECIMAL(18,4),
 Alergias VARCHAR(250),
-STATUS VARCHAR(20),
+StatusPaciente VARCHAR(20),
 FechaNac DATETIME,
 PRIMARY KEY (UsuarioId),
 CONSTRAINT TablaForeignKey FOREIGN KEY (UsuarioId)
@@ -33,12 +33,12 @@ CREATE TABLE CitasDisponibles(
 IdCitaDisp INT,
 DoctorUsuarioId INT,
 StatusCita VARCHAR(30),
-Fecha DATETIME,
-Hora DATETIME
+FechaCitaDisp DATETIME
 PRIMARY KEY(IdCitaDisp),
 FOREIGN KEY (DoctorUsuarioId)
 REFERENCES Doctor(UsuarioId)
 )
+
 
 CREATE TABLE Cita(
 IdCita INT,
@@ -57,8 +57,8 @@ REFERENCES Paciente(UsuarioId)
 CREATE TABLE Visita(
 CitaIdCita INT,
 SignosVitales VARCHAR(255),
-Peso INT,
-Estatura INT,
+Peso DECIMAL(18,4),
+Estatura DECIMAL(18,4),
 Sintomas VARCHAR(255),
 Diagnostico VARCHAR(255),
 PRIMARY KEY (CitaIdCita),
@@ -67,6 +67,7 @@ REFERENCES  Cita(IdCita)
 )
 
 CREATE TABLE Historial(
+IdRegistro INT,
 PacienteUsuarioId INT,
 VisitaCitaIdCita INT,
 PRIMARY KEY (PacienteUsuarioId),
