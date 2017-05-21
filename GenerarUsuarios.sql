@@ -146,4 +146,19 @@ BEGIN
 	SET @numactual = @numactual + 1
 END;
 
-EXEC crearcitasd @numbusc = 20
+EXEC crearcitasd @numbusc = 100000
+
+
+CREATE PROCEDURE Generarcitaoficial (@CitaDisponibleID int, @Pacienteid int, @Motivo varchar(255))
+AS
+DECLARE @citaid varchar(255), @status varchar(255), @visitaAnterior INT, @PacienteVerificado INT, @CitaVerificada INT
+SET @citaid = 'Cita: ' + CAST((SELECT COUNT(*) FROM Cita)  AS varchar(255))
+SET @PacienteVerificado = (SELECT UsuarioId FROM Paciente WHERE @Pacienteid = UsuarioId)
+SET @CitaVerificada = (SELECT IdCitaDisp FROM CitasDisponibles WHERE @CitaDisponibleID = IdCitaDisp)
+SET @status = 'Active'
+SET @visitaAnterior = (SELECT TOP(1) IdCita FROM Cita WHERE @Pacienteid = IdCita ORDER BY  NEWID())
+INSERT INTO Cita VALUES(@citaid, @CitaDisponibleID, @PacienteVerificado, @Motivo, @status, @visitaAnterior)
+	
+
+
+EXEC generarcitaoficial @CitaDisponibleID = 99, @Pacienteid = 10018, @Motivo = 'Visita de Rutina'

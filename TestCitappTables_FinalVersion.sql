@@ -41,7 +41,7 @@ REFERENCES Doctor(UsuarioId)
 )
 
 CREATE TABLE Cita(
-IdCita VARCHAR(255),
+IdCita INT,
 CitasDispobiblesIdCitaDisp INTEGER,
 PacienteUsuarioId INTEGER,
 MotivoCita VARCHAR(255),
@@ -55,7 +55,7 @@ REFERENCES Paciente(UsuarioId)
 )
 
 CREATE TABLE Visita(
-CitaIdCita VARCHAR(255),
+CitaIdCita INT,
 SignosVitales VARCHAR(255),
 Peso INT,
 Estatura INT,
@@ -68,7 +68,7 @@ REFERENCES  Cita(IdCita)
 
 CREATE TABLE Historial(
 PacienteUsuarioId INT,
-VisitaCitaIdCita VARCHAR(255),
+VisitaCitaIdCita INT,
 PRIMARY KEY (PacienteUsuarioId),
 FOREIGN KEY (PacienteUsuarioId)
 REFERENCES Paciente(UsuarioId),
@@ -77,7 +77,7 @@ REFERENCES Visita(CitaIdCita),
 )
 
 CREATE TABLE Recetas(
-VisitaCitaIdCita VARCHAR(255),
+VisitaCitaIdCita INT,
 Folio INT,
 Fecha DATETIME,
 Medicamento VARCHAR(255),
