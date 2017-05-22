@@ -1,4 +1,4 @@
-ALTER PROCEDURE spGenerateDoctors @Doctors INT
+CREATE PROCEDURE spGenerateDoctors @Doctors INT
 AS
 DECLARE @Id INT
 DECLARE @Especialidad VARCHAR(40)
