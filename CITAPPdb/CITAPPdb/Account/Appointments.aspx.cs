@@ -27,10 +27,10 @@ namespace CITAPPdb.Account
             ApptDate.Text = this.CalendarAppt.SelectedDate.ToShortDateString();
 
         }
-
+        
         protected void BookButton_Click(object sender, EventArgs e)
         {
-            //TextBox2.Text = "";
+            /*TextBox2.Text = "";
             
             string username = (WindowsIdentity.GetCurrent().Name).ToString();
             string server = "";
@@ -42,12 +42,7 @@ namespace CITAPPdb.Account
 
             string ConString = "Data Source=" + server + ";User ID=" + username + "; Integrated Security = SSPI; Trusted_Connection=Yes; ";
             
-            string SQLCommand =
-            "USING [CITAPP] DECLARE @ApptId INT DECLARE @PatientId INT DECLARE @SelDate DATETIME " +
-            "SET @ApptId = (SELECT COUNT(id) FROM Citas )+ 1; " +
-            "SET @PatientId = (SELECT id FROM Clientes WHERE first_name + ' ' +  last_name = '" + TextBox1.Text + "'); " +
-            "SET @SelDate = '" + ApptDate.Text.ToString() + "'; " +
-            "INSERT INTO Citas VALUES (@ApptId,'', @PatientId, @SelDate)"; 
+            string SQLCommand ="SELECT Id FROM Usuario"; 
 
 
             if (ApptDate != null && !string.IsNullOrWhiteSpace(ApptDate.Text))
@@ -79,7 +74,7 @@ namespace CITAPPdb.Account
                             read.Close();
                         }
 
-                    }*/
+                    }
                 }
                 catch
                 {
@@ -89,7 +84,7 @@ namespace CITAPPdb.Account
             else
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You need to pick a date first. Try again." + "');", true);
-            }
+            }*/
 
         }
 

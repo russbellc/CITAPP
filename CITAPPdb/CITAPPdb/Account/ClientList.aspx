@@ -156,8 +156,8 @@ label {
             </div>
 
 
-            <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Patients" DataValueField="Patients" Height="221px" Width="1260px"></asp:ListBox>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT TOP 5000 first_name  + ' ' + last_name + '. Doctor: ' + doctor AS 'Patients' FROM Clientes"></asp:SqlDataSource>
+            <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Paciente" DataValueField="Paciente" Height="221px" Width="1260px"></asp:ListBox>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT 'Paciente: '+ Nombre  + ' ' + Apellido  FROM Usuario u INNER JOIN Cita c ON u.Id = c.PacienteUsuarioId INNER JOIN CitasDisponibles cd ON cd.IdCitaDisp = c.IdCita" ></asp:SqlDataSource>
             <p>
                             <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label" ID="Label1">Name</asp:Label>
                                 <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" Width="295px"/>

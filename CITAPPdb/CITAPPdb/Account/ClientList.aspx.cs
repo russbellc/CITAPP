@@ -53,7 +53,7 @@ namespace CITAPPdb.Account
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DELATORRE;Initial Catalog=CITAPP;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection("Data Source=BRTZ-DESKTOP\\SQLEXPRESS;Initial Catalog=CITAPPdb;Integrated Security=True"))
             {
 
             }

@@ -78,7 +78,7 @@
                         <div class="col-md-8">
                             <asp:ListBox ID="ListBoxPatients" runat="server" DataSourceID="CITAPP" DataTextField="Patients" DataValueField="Patients" Width="285px" OnSelectedIndexChanged="ListBoxPatients_SelectedIndexChanged">
                             </asp:ListBox>    
-                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT TOP 1000 [first_name] + ' ' + [last_name] AS 'Patients' FROM [Clientes] ORDER BY [last_name]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="CITAPP" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>" SelectCommand="SELECT Id FROM Usuario"></asp:SqlDataSource>
                             
                             <asp:Button ID="BookButton" runat="server" OnClick="BookButton_Click" Text="Book Appointment" Width="286px" />
                             <asp:SqlDataSource ID="InsertDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CITAPPConnectionString %>"
